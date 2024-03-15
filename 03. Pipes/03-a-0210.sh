@@ -1,0 +1,1 @@
+cat /etc/passwd | cut -f 1,5 -d ':'
