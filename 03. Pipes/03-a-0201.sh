@@ -1,1 +1,1 @@
-cat /etc/passwd | sort -k -n  3 -t ':'
+cat /etc/passwd | sort -k 3 -n -t ':'
