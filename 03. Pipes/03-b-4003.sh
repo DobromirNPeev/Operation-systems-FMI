@@ -1,0 +1,1 @@
+cat ~/dir5/file1 ~/dir5/file2 ~/dir5/file3 | grep -o . | sort | uniq -c | sort -k 1 -t ' ' -rn | awk -v "most_freq=$(cat ~/dir5/file1 ~/dir5/file2 ~/dir5/file3 |grep -o . | sort | uniq -c | sort -k 1 -rn | head -n 1 | awk '{print $1}')" '$1 == most_freq {print $0}'
