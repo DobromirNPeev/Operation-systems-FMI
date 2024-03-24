@@ -1,0 +1,1 @@
+grep -E ",$(grep -E --color '^.*,.*,2016,.*$' ~/population.csv | awk -F ',' '{print $NF}' | sort -rn | head -n 1 )|,$(grep -E --color '^.*,.*,2016,.*$' ~/population.csv | awk -F ',' '{print $NF}' | sort -rn | tail -n 1)" ~/population.csv
