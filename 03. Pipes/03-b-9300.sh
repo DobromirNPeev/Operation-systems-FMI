@@ -1,0 +1,1 @@
+cat emails.txt | grep -E --color '^([a-zA-Z_]+[.-]?|[0-9]+)+[a-zA-Z0-9_]@(([0-9.]+)|([a-zA-Z]+[.-]?)+)$'
