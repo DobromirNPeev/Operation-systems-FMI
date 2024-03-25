@@ -15,4 +15,5 @@ cat ~/emp.data | awk -v 'temp=0' '{temp=$1;$1=$2;$2=temp; print $0}'
 cat ~/emp.data | awk '{$1=NR; print $0}'
 cat ~/emp.data | awk  '{$2=""; print $0}'
 cat ~/emp.data | awk '{print $2+$3}'
+cat ~/emp.data | awk '{sum+=$2+$3} END {print sum}'
 
