@@ -11,5 +11,5 @@ cat ~/emp.data | awk 'length($0) > 17 {print $0}'
 cat ~/emp.data | awk '{print NF, $0}'
 cat ~/emp.data | awk '{print $2, $1}'
 cat ~/emp.data | awk -v 'temp=0' '{temp=$1;$1=$2;$2=temp; print $0}'
-cat ~/emp.data | awk -v 'temp=0' '{$1=NR; print $0}'
+cat ~/emp.data | awk '{$1=NR; print $0}'
 
