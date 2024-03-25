@@ -6,7 +6,7 @@ cat ~/emp.data | awk 'NF > 4 { print $0}'
 cat ~/emp.data | awk '$NF > 4 { print $0}'
 cat ~/emp.data | awk 'BEGIN {sum=0} { sum +=NF } END {print sum}'
 cat ~/emp.data | awk  "/Beth/ {count+=1} END {print count}"
-cat ~/emp.data | awk 'BEGIN {max=0; row=0} $NF > max { max=$NF; row=NR} END { print max,row}'
+cat ~/emp.data | awk 'BEGIN {max=0; row=""} $NF > max { max=$NF; row=$0} END { print max,row}'
 cat ~/emp.data | awk 'NF > 0 {print $0}'
 cat ~/emp.data | awk 'length($0) > 17 {print $0}'
 cat ~/emp.data | awk '{print NF, $0}'
