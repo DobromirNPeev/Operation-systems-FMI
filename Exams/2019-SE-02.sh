@@ -1,0 +1,1 @@
+find $(cat /etc/passwd | grep 'SI' | cut -d ':' -f 6) -maxdepth 0 -printf '%C@  %p\n' | awk '$1 >=1711168000 &&  $1<= 1721176100 { print $2}' | xargs -I{} grep {} /etc/passwd | cut -d ':' -f 1,5  | sed 's/,,,,SI$//' | sed 's/^s//' | awk -F ':' '{print $1 "\t" $2}'

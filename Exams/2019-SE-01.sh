@@ -1,0 +1,1 @@
+cat /srv/fmi-os/data/01-shell/2019-SE-01/input.data | tail -n +2 | sort -n -k 3 -t ';' | awk -F ';' -v "most_distant_type=$(cat /srv/fmi-os/data/01-shell/2019-SE-01/input.data | tail -n +2 | sort -n -k 3 -t ';' | cut -d ';' -f 2 | tail -n 1)" '$2==most_distant_type {print $0}'| head -n 1 | cut -d ';' -f 1,4
