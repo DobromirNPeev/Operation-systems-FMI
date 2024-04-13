@@ -18,7 +18,7 @@ fi
 file="${1}"
 dir="${2}"
 
-valid_lines="$(grep -E "^([a-zA-Z-]+) *([a-zA-Z-]+)( \(.+\))?:.*$" "${file}")"
+valid_lines="$(grep -E "^([a-zA-Z-]+) +([a-zA-Z-]+)( \(.+\))?:.*$" "${file}")"
 
 if [[ ! -f "${dir}/dict.txt" ]];then
         touch "${dir}/dict.txt"
@@ -36,4 +36,4 @@ while read person;do
                 echo "${line}" >> "${dir}/${count}.txt"
         done < <(echo "${valid_lines}" | grep -F "${person}" | cut -d ':' -f 2)
         count=$((count+1))
-done < <(echo "${valid_lines}" |grep -o -E '^([a-zA-Z-]+ *[a-zA-Z-]+)' | sort |uniq)
+done < <(echo "${valid_lines}" |grep -o -E '^([a-zA-Z-]+ +[a-zA-Z-]+)' | sort |uniq)
