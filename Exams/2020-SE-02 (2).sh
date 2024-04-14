@@ -1,0 +1,1 @@
+grep $(cat /srv/fmi-os/data/01-shell/2020-SE-02/spacex.txt | tail -n +2 | sort -n -t '|' -k 1 | awk -F '|' '$3 == "Failure" {array[$2]+=1} END { for (key in array) {print key,array[key]}}' | sort -n -k 2 -t ' ' | head -n 1 | cut -d ' ' -f 1) /srv/fmi-os/data/01-shell/2020-SE-02/spacex.txt | sort -rn -k 1 -t '|' | head -n 1 | awk -F '|' '{print $3 ":" $4}'
